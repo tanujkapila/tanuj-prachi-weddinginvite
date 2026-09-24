@@ -56,7 +56,7 @@ function DateSection() {
           className="absolute inset-0 h-full w-full object-cover will-change-transform"
           style={{ transform: `scale(${1.06 + progress * 0.14})` }}
         />
-        <div className="absolute inset-0 bg-ink/35" />
+        <div className="absolute inset-0 bg-ink/45" />
         <div className="relative flex h-full flex-col items-center justify-center gap-2 px-6 text-center text-cream">
           {lines.map((line, i) => {
             const start = 0.12 + i * 0.22;
