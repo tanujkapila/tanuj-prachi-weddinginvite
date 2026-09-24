@@ -58,7 +58,7 @@ function DateSection() {
           style={{ transform: `scale(${1.06 + progress * 0.14})` }}
         />
         <div className="absolute inset-0 bg-ink/45" />
-        <div className="relative flex h-full flex-col items-center justify-center gap-2 px-6 text-center text-cream">
+        <div className="relative flex h-full flex-col items-center justify-start gap-2 px-6 pt-[16vh] text-center text-cream sm:pt-[12vh]">
           {lines.map((line, i) => {
             const start = 0.12 + i * 0.22;
             const t = Math.min(1, Math.max(0, (progress - start) / 0.22));
