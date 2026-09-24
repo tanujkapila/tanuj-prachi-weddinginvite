@@ -87,18 +87,8 @@ function DateSection() {
 }
 
 function Invitation() {
-  const [opened, setOpened] = useState(false);
-
-  useEffect(() => {
-    document.body.style.overflow = opened ? "" : "hidden";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [opened]);
-
   return (
     <main className="bg-cream font-sans text-ink [padding-bottom:env(safe-area-inset-bottom)]">
-      {!opened && <Envelope onOpen={() => setOpened(true)} />}
       {/* 1 — Hero */}
       <section className="relative h-[100svh] w-full overflow-hidden">
         <img
@@ -111,13 +101,13 @@ function Invitation() {
         <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-transparent to-ink/70" />
         <div className="relative flex h-full flex-col items-center justify-end px-6 pb-[max(4rem,env(safe-area-inset-bottom))] text-center text-cream">
           <h1
-            className={`font-serif text-[13vw] italic leading-[1.05] sm:text-[8vw] ${opened ? "animate-rise" : "opacity-0"}`}
+            className="animate-rise font-serif text-[13vw] italic leading-[1.05] sm:text-[8vw]"
             style={{ animationDelay: "180ms" }}
           >
             Tanuj &amp; Prachi
           </h1>
           <p
-            className={`mt-4 text-xs uppercase tracking-[0.34em] ${opened ? "animate-rise opacity-90" : "opacity-0"}`}
+            className="mt-4 animate-rise text-xs uppercase tracking-[0.34em] opacity-90"
             style={{ animationDelay: "620ms" }}
           >
             are getting married
