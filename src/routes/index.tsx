@@ -4,7 +4,9 @@ import heroForest from "@/assets/hero-forest.jpg";
 import beachWalk from "@/assets/beach-walk.jpg";
 import embrace from "@/assets/embrace.jpg";
 import beachDance from "@/assets/beach-dance.jpg";
+import { useEffect, useState } from "react";
 import { Countdown } from "@/components/wedding/Countdown";
+import { Envelope } from "@/components/wedding/Envelope";
 import { Reveal } from "@/components/wedding/Reveal";
 import { Rsvp } from "@/components/wedding/Rsvp";
 import { useScrollProgress } from "@/hooks/use-reveal";
@@ -85,8 +87,18 @@ function DateSection() {
 }
 
 function Invitation() {
+  const [opened, setOpened] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = opened ? "" : "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [opened]);
+
   return (
     <main className="bg-cream font-sans text-ink [padding-bottom:env(safe-area-inset-bottom)]">
+      {!opened && <Envelope onOpen={() => setOpened(true)} />}
       {/* 1 — Hero */}
       <section className="relative h-[100svh] w-full overflow-hidden">
         <img
@@ -99,13 +111,13 @@ function Invitation() {
         <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-transparent to-ink/70" />
         <div className="relative flex h-full flex-col items-center justify-end px-6 pb-[max(4rem,env(safe-area-inset-bottom))] text-center text-cream">
           <h1
-            className="animate-rise font-serif text-[13vw] italic leading-[1.05] sm:text-[8vw]"
+            className={`font-serif text-[13vw] italic leading-[1.05] sm:text-[8vw] ${opened ? "animate-rise" : "opacity-0"}`}
             style={{ animationDelay: "180ms" }}
           >
             Tanuj &amp; Prachi
           </h1>
           <p
-            className="animate-rise mt-4 text-xs uppercase tracking-[0.34em] opacity-90"
+            className={`mt-4 text-xs uppercase tracking-[0.34em] ${opened ? "animate-rise opacity-90" : "opacity-0"}`}
             style={{ animationDelay: "620ms" }}
           >
             are getting married
