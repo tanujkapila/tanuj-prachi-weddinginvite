@@ -12,4 +12,5 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  base: process.env.GITHUB_ACTIONS ? "/tanuj-prachi-weddinginvite/" : "/",
 });
