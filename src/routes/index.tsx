@@ -177,7 +177,27 @@ function Invitation() {
         </Reveal>
       </section>
 
-      {/* 6 — RSVP */}
+      {/* 6 — Sunset photo */}
+      <section className="relative h-[85svh] w-full overflow-hidden">
+        <img
+          src={beachDance}
+          alt="Tanuj and Prachi dancing on the beach at sunset"
+          loading="lazy"
+          width={854}
+          height={1280}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent" />
+        <div className="relative flex h-full items-end justify-center pb-20 text-center">
+          <Reveal>
+            <p className="text-[0.65rem] uppercase tracking-[0.4em] text-cream/90">
+              11 · 12 · 2026
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 7 — RSVP */}
       <section className="bg-cream px-6 py-24 text-center sm:py-32">
         <Reveal>
           <h2 className="font-serif text-5xl italic sm:text-7xl">RSVP</h2>
@@ -190,7 +210,7 @@ function Invitation() {
         </Reveal>
       </section>
 
-      {/* 7 — Footer */}
+      {/* 8 — Footer */}
       <footer className="bg-butter px-6 pb-[max(3rem,env(safe-area-inset-bottom))] pt-16 text-center">
         <div className="mx-auto h-px w-full max-w-md bg-ink/20" />
         <p className="mt-10 font-serif text-4xl italic sm:text-5xl">Tanuj &amp; Prachi</p>
