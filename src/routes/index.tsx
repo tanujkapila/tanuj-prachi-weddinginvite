@@ -87,8 +87,18 @@ function DateSection() {
 }
 
 function Invitation() {
+  const [opened, setOpened] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = opened ? "" : "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [opened]);
+
   return (
     <main className="bg-cream font-sans text-ink [padding-bottom:env(safe-area-inset-bottom)]">
+      {!opened && <Envelope onOpen={() => setOpened(true)} />}
       {/* 1 — Hero */}
       <section className="relative h-[100svh] w-full overflow-hidden">
         <img
