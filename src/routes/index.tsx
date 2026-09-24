@@ -98,7 +98,7 @@ function Invitation() {
         <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-transparent to-ink/70" />
         <div className="relative flex h-full flex-col items-center justify-end px-6 pb-[max(4rem,env(safe-area-inset-bottom))] text-center text-cream">
           <h1
-            className="animate-rise font-serif text-[16vw] italic leading-[1] sm:text-[9vw]"
+            className="animate-rise font-serif text-[13vw] italic leading-[1.05] sm:text-[8vw]"
             style={{ animationDelay: "180ms" }}
           >
             Tanuj &amp; Prachi
